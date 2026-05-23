@@ -67,9 +67,6 @@ a {
 /* HERO */
 
 .hero {
-  display: flex;
-  align-items: center;
-  min-height: 100vh;
   padding: 8rem 5% 4rem;
   background-image: url("./images/house.png");
   background-repeat: no-repeat;
