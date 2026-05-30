@@ -67,16 +67,22 @@ a {
 /* HERO */
 
 .hero-content {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
   position: relative;
   min-height: 90vh;
+
+  /* position: relative;
+  min-height: 90vh; */
 }
 
-.hero-content img {
+.hero-image {
   position: absolute;
-  left: 0;
-  top: 0;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: left center;
+  z-index: 1;
 }
 
 .hero-content-details {
@@ -86,9 +92,8 @@ a {
   transform: translateY(-50%);
   max-width: 65%;
   background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
+  /* backdrop-filter: blur(20px); */
   padding: 4rem 3.5rem;
-
   box-shadow:
     0 10px 40px rgba(0, 0, 0, 0.08),
     0 2px 8px rgba(0, 0, 0, 0.04);
@@ -104,13 +109,12 @@ a {
 }
 
 .hero h1 {
-  margin-bottom: 1.75rem;
-  font-size: clamp(2.25rem, 3.5vw, 3.25rem);
+  margin-bottom: 1.5rem;
+  font-size: clamp(2.4rem, 4vw, 4.5rem);
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: -0.025em;
-  color: var(--color-text);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
 }
 
 .hero .subtext {
@@ -118,7 +122,6 @@ a {
   font-size: 1.05rem;
   line-height: 1.75;
   color: var(--color-muted);
-  max-width: 90%;
 }
 
 /* Reset hero p styles for the card */
@@ -201,83 +204,81 @@ a {
 /* RESPONSIVE */
 
 @media (max-width: 768px) {
-  .hero {
-    min-height: auto;
-  }
-
   .hero-content {
-    flex-direction: column;
-    min-height: auto;
-    position: relative;
+    min-height: 85vh;
+    padding: 2rem 5%;
+    background-image: url("./images/house.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   .hero-content img {
-    position: relative;
-    width: 100%;
-    height: 50vh;
-    min-height: 400px;
+    display: none;
   }
 
   .hero-content-details {
-    position: relative;
-    top: auto;
-    right: auto;
-    transform: none;
+    margin: 0;
+    width: 100%;
+    max-width: 620px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: none;
+    box-shadow: none;
     width: 90%;
     max-width: 100%;
-    margin: -3rem auto 3rem;
-    padding: 3rem 2.5rem;
+    padding: 1rem 1.5rem;
   }
 
   .hero h1 {
-    font-size: 2.25rem;
+    font-size: clamp(3rem, 8vw, 5.8rem);
+    color: var(--color-light);
+  }
+
+  .hero p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.88);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
   }
 
   .hero .subtext {
     font-size: 1rem;
-    max-width: 100%;
+    color: var(--color-cream);
+  }
+
+  .button {
+    border: 1px solid var(--color-light);
+    background-color: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(1px);
+    color: var(--color-light);
+  }
+
+  .button:hover {
+    background-color: var(--color-stone);
+    color: var(--color-text);
   }
 }
 
-@media (max-width: 600px) {
-  .logo {
-    font-size: 1rem;
-  }
-
-  .site-nav ul {
-    gap: 1.2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .hero-content-details {
-    padding: 2.5rem 2rem;
-    margin: -2rem auto 2rem;
-  }
-
+@media (max-width: 475px) {
   .hero h1 {
     font-size: 2rem;
-    margin-bottom: 1.5rem;
-  }
-}
-
-@media (max-width: 460px) {
-  .hero-content-details {
-    padding: 2rem 1.5rem;
-    width: 92%;
+    margin-bottom: 0.8rem;
   }
 
-  .social-links {
-    gap: 1rem;
+  .hero .eyebrow {
+    font-size: 0.7rem;
   }
 
-  .social-links a {
-    width: 32px;
-    height: 32px;
+  .hero .subtext {
+    margin-bottom: 1rem;
   }
 
-  .social-links img {
-    width: 18px;
-    height: 18px;
+  .btn-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.7rem;
+  }
+
+  .button {
+    padding: 0.8rem 1.6rem;
   }
 }
