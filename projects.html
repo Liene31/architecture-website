@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="./global.css" />
+    <title>Projects — Architecture</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="index.html" class="logo">Name</a>
+
+      <nav class="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- PAGE INTRO -->
+      <section class="page-intro">
+        <p class="eyebrow">Our Projects</p>
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
+        <p class="subtext">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam
+          adipisci facere, tempora quod sint quas non, accusantium.
+        </p>
+      </section>
+
+      <!-- PROJECTS GRID -->
+      <section class="page-section">
+        <div class="projects-grid">
+          <!-- SINGLE-IMAGE project -->
+          <!-- Stores image paths for this project card. JavaScript reads this data-images array to populate the gallery/modal when the card is clicked. -->
+          <!-- I could use instead in JS as a objects but since this is small static page, this works fine -->
+          <article
+            class="project-card"
+            data-images='[
+              "./images/projects/almu-y-tommi.png"
+            ]'
+          >
+            <div class="project-image">
+              <img
+                src="./images/projects/almu-y-tommi.png"
+                alt="Almu & Tommi project"
+              />
+            </div>
+            <div class="project-info">
+              <p class="project-meta">Residential · 2025</p>
+              <h3>Almu & Tommi</h3>
+              <p class="project-desc">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              </p>
+            </div>
+          </article>
+
+          <!-- SINGLE-IMAGE project -->
+          <article
+            class="project-card"
+            data-images='[
+              "./images/projects/my-tannour.png"
+            ]'
+          >
+            <div class="project-image">
+              <img
+                src="./images/projects/my-tannour.png"
+                alt="My Tannour project"
+              />
+            </div>
+            <div class="project-info">
+              <p class="project-meta">Commercial · 2025</p>
+              <h3>My Tannour</h3>
+              <p class="project-desc">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              </p>
+            </div>
+          </article>
+
+          <!-- SINGLE-IMAGE project -->
+          <article
+            class="project-card"
+            data-images='[
+              "./images/projects/sint-niklaas.png"
+            ]'
+          >
+            <div class="project-image">
+              <img
+                src="./images/projects/sint-niklaas.png"
+                alt="Sint Niklaas project"
+              />
+            </div>
+            <div class="project-info">
+              <p class="project-meta">Commercial · 2025</p>
+              <h3>Sint Niklaas</h3>
+              <p class="project-desc">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              </p>
+            </div>
+          </article>
+
+          <!-- SINGLE-IMAGE project -->
+          <article
+            class="project-card"
+            data-images='[
+              "./images/projects/pfc.png"
+            ]'
+          >
+            <div class="project-image">
+              <img src="./images/projects/pfc.png" alt="PFC project" />
+            </div>
+            <div class="project-info">
+              <p class="project-meta">Commercial · 2025</p>
+              <h3>PFC</h3>
+              <p class="project-desc">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              </p>
+            </div>
+          </article>
+
+          <!-- MULTI-IMAGE project (2 images) -->
+          <article
+            class="project-card"
+            data-images='[
+              "./images/projects/pozaldez.png",
+              "./images/projects/pozaldez-2.png"
+            ]'
+          >
+            <div class="project-image">
+              <img
+                src="./images/projects/pozaldez.png"
+                alt="Pozaldez project"
+              />
+              <span class="image-count">+1</span>
+            </div>
+            <div class="project-info">
+              <p class="project-meta">Residential · 2025</p>
+              <h3>Pozaldez</h3>
+              <p class="project-desc">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              </p>
+            </div>
+          </article>
+
+          <!-- MULTI-IMAGE project (2 images) -->
+          <article
+            class="project-card"
+            data-images='[
+              "./images/projects/rue-neuve-96.png",
+              "./images/projects/rue-neuve-96-2.png",
+            ]'
+          >
+            <div class="project-image">
+              <img
+                src="./images/projects/rue-neuve-96.png"
+                alt="Rue Neuve 96 project"
+              />
+              <span class="image-count">+1</span>
+            </div>
+            <div class="project-info">
+              <p class="project-meta">Residential · 2025</p>
+              <h3>Rue Neuve 96</h3>
+              <p class="project-desc">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              </p>
+            </div>
+          </article>
+
+          <!-- MULTI-IMAGE project (4 images) -->
+          <article
+            class="project-card"
+            data-images='[
+              "./images/projects/colman.png",
+              "./images/projects/colman-2.png",
+              "./images/projects/colman-3.png",
+              "./images/projects/colman-4.png"
+            ]'
+          >
+            <div class="project-image">
+              <img src="./images/projects/colman.png" alt="Colman project" />
+              <span class="image-count">+3</span>
+            </div>
+            <div class="project-info">
+              <p class="project-meta">Residential · 2025</p>
+              <h3>Colman</h3>
+              <p class="project-desc">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              </p>
+            </div>
+          </article>
+
+          <!-- MULTI-IMAGE project (3 images) -->
+          <article
+            class="project-card"
+            data-images='[
+              "./images/projects/xl-58.png",
+              "./images/projects/xl-58-2.png",
+              ./images/projects/xl-58-3.png
+            ]'
+          >
+            <div class="project-image">
+              <img src="./images/projects/xl-58.png" alt="XL 58 project" />
+              <span class="image-count">+2</span>
+            </div>
+            <div class="project-info">
+              <p class="project-meta">Residential · 2025</p>
+              <h3>XL 58</h3>
+              <p class="project-desc">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              </p>
+            </div>
+          </article>
+
+          <!-- MULTI-IMAGE project (2 images) -->
+          <article
+            class="project-card"
+            data-images='[
+              "./images/projects/xl70.png",
+              "./images/projects/xl70-2.png",
+            ]'
+          >
+            <div class="project-image">
+              <img src="./images/projects/xl70.png" alt="XL 70 project" />
+              <span class="image-count">+1</span>
+            </div>
+            <div class="project-info">
+              <p class="project-meta">Residential · 2025</p>
+              <h3>XL 70</h3>
+              <p class="project-desc">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© Name 2026</p>
+
+      <ul class="social-links">
+        <li>
+          <a
+            href="https://www.youtube.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="./images/youtube.svg" alt="YouTube" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="./images/instagram-fill.svg" alt="Instagram" />
+          </a>
+        </li>
+        <li>
+          <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
+            <img src="./images/x-twitter-solid.svg" alt="X / Twitter" />
+          </a>
+        </li>
+      </ul>
+    </footer>
+
+    <!-- LIGHTBOX OVERLAY -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" aria-label="Close">&times;</button>
+      <button class="lightbox-prev" aria-label="Previous">&#8249;</button>
+      <img class="lightbox-img" id="lightbox-img" src="" alt="Project image" />
+      <button class="lightbox-next" aria-label="Next">&#8250;</button>
+      <span class="lightbox-counter" id="lightbox-counter"></span>
+    </div>
+  </body>
+</html>

@@ -323,6 +323,148 @@ a {
   font-weight: 600;
 }
 
+/* PROJECTS */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.project-card {
+  background-color: var(--color-light);
+  border: 1px solid var(--color-stone);
+  cursor: pointer;
+}
+
+.project-image {
+  position: relative;
+}
+
+.project-image img {
+  width: 100%;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1.5rem 1.75rem;
+}
+
+.project-meta {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.project-card h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.project-desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+
+/* PROJECTS — MULTI-IMAGE */
+
+.image-count {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background-color: var(--color-light);
+}
+
+/* LIGHTBOX */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(37, 37, 37, 0.94);
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox-img {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.lightbox button {
+  position: absolute;
+  background: none;
+  border: none;
+  color: var(--color-light);
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  line-height: 1;
+}
+
+.lightbox button:hover {
+  opacity: 1;
+}
+
+.lightbox-close {
+  top: 1.75rem;
+  right: 2.25rem;
+  font-size: 2.75rem;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3.5rem;
+  padding: 0 1rem;
+}
+
+.lightbox-prev {
+  left: 1.5rem;
+}
+
+.lightbox-next {
+  right: 1.5rem;
+}
+
+/* Hidden automatically for single-image projects */
+.lightbox.single .lightbox-prev,
+.lightbox.single .lightbox-next,
+.lightbox.single .lightbox-counter {
+  display: none;
+}
+
+.lightbox-counter {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  color: var(--color-light);
+  opacity: 0.7;
+}
+
 /* RESPONSIVE */
 
 @media (max-width: 768px) {
@@ -406,7 +548,8 @@ a {
 }
 
 @media (max-width: 900px) {
-  .values-grid {
+  .values-grid,
+  .projects-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -423,11 +566,23 @@ a {
 }
 
 @media (max-width: 600px) {
-  .values-grid {
+  .values-grid,
+  .projects-grid {
     grid-template-columns: 1fr;
   }
 
   .page-intro {
     padding-top: 4rem;
+  }
+
+  /* LIGHTBOX */
+  .lightbox-prev,
+  .lightbox-next {
+    font-size: 2.5rem;
+  }
+  .lightbox-close {
+    font-size: 2.25rem;
+    top: 1rem;
+    right: 1.25rem;
   }
 }
