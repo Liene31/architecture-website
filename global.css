@@ -605,10 +605,7 @@ a {
   }
 
   /* LIGHTBOX */
-  .lightbox-prev,
-  .lightbox-next {
-    /* font-size: 2.5rem; */
-  }
+
   .lightbox-close {
     font-size: 2.25rem;
     top: 1rem;
