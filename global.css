@@ -8,8 +8,11 @@
   --color-light: #fefefe;
   --color-cream: #f7f4ee;
   --color-stone: #e8e2d8;
+  --color-stone-rgb: 232, 226, 216;
   --color-text: #252525;
+  --color-text-rgb: 37, 37, 37;
   --color-muted: #6f6a62;
+  --color-muted-rgb: 111, 106, 98;
 }
 
 body {
@@ -373,6 +376,38 @@ a {
   color: var(--color-muted);
 }
 
+/* PROJECT SPECS */
+
+.project-specs {
+  display: flex;
+  gap: 1.5rem;
+  margin: 1.5rem 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-stone);
+}
+
+.project-specs dt {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 0.25rem;
+}
+
+.project-specs dd {
+  font-size: 0.95rem;
+}
+
+.status-tag {
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-muted);
+  background-color: var(--color-cream);
+}
+
 /* PROJECTS — MULTI-IMAGE */
 
 .image-count {
@@ -392,9 +427,12 @@ a {
 .lightbox {
   display: none;
   position: fixed;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 100;
-  background: rgba(37, 37, 37, 0.94);
+  background: rgba(var(--color-text-rgb), 0.94);
   align-items: center;
   justify-content: center;
 }
@@ -406,19 +444,17 @@ a {
 .lightbox-img {
   max-width: 85%;
   max-height: 85%;
+  margin-bottom: 0.5rem;
   object-fit: contain;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
 .lightbox button {
-  position: absolute;
   background: none;
   border: none;
   color: var(--color-light);
   cursor: pointer;
-  opacity: 0.7;
-  transition: opacity 0.2s ease;
-  line-height: 1;
+  opacity: 0.5;
 }
 
 .lightbox button:hover {
@@ -426,25 +462,29 @@ a {
 }
 
 .lightbox-close {
+  position: absolute;
   top: 1.75rem;
   right: 2.25rem;
   font-size: 2.75rem;
 }
 
+.lightbox-controls {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  bottom: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--color-light);
+}
+
 .lightbox-prev,
 .lightbox-next {
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 3.5rem;
   padding: 0 1rem;
+  font-size: 1.5rem;
 }
 
-.lightbox-prev {
-  left: 1.5rem;
-}
-
-.lightbox-next {
-  right: 1.5rem;
+.lightbox-counter {
+  font-size: 0.75rem;
 }
 
 /* Hidden automatically for single-image projects */
@@ -452,17 +492,6 @@ a {
 .lightbox.single .lightbox-next,
 .lightbox.single .lightbox-counter {
   display: none;
-}
-
-.lightbox-counter {
-  position: absolute;
-  bottom: 1.75rem;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
-  color: var(--color-light);
-  opacity: 0.7;
 }
 
 /* RESPONSIVE */
@@ -578,7 +607,7 @@ a {
   /* LIGHTBOX */
   .lightbox-prev,
   .lightbox-next {
-    font-size: 2.5rem;
+    /* font-size: 2.5rem; */
   }
   .lightbox-close {
     font-size: 2.25rem;
