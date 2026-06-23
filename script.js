@@ -11,6 +11,7 @@ function showImage(i) {
   // if on the first image, previous button will go to the second image
   index = (i + imageGallery.length) % imageGallery.length;
   lightboxImg.src = imageGallery[index];
+  showCounter();
 }
 
 function updateArrows() {
@@ -21,6 +22,11 @@ function updateArrows() {
   } else {
     lightbox.classList.remove("single");
   }
+}
+
+//add image count for the image gallery
+function showCounter() {
+  counter.textContent = ` ${index + 1} / ${imageGallery.length}`;
 }
 
 function openLightbox(image) {
