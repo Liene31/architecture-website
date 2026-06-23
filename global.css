@@ -54,10 +54,17 @@ a {
 
 .logo {
   font-family: "Montserrat", sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.logo-name {
+  font-weight: 700;
+}
+
+.logo-suffix {
+  font-weight: 300;
+  margin-left: 0.35rem;
+  color: var(--color-muted);
 }
 
 .site-nav ul {
