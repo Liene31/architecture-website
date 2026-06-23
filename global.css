@@ -89,34 +89,31 @@ a {
 
 .hero-content {
   position: relative;
-  min-height: 90vh;
-}
-
-.hero-image {
-  position: absolute;
-  height: 100%;
-  object-fit: contain;
-  object-position: left center;
-  z-index: 1;
+  display: flex;
+  align-items: center;
+  min-height: 85vh;
+  padding: 5%;
+  background-image: url("./images/projects/pfc.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero-content-details {
-  position: absolute;
-  top: 50%;
-  right: 6%;
-  transform: translateY(-50%);
-  max-width: 65%;
-  background: rgba(255, 255, 255, 0.95);
-  /* backdrop-filter: blur(20px); */
-  padding: 4rem 3.5rem;
-  box-shadow:
-    0 10px 40px rgba(0, 0, 0, 0.08),
-    0 2px 8px rgba(0, 0, 0, 0.04);
+  max-width: 600px;
+  padding: 3.5rem;
+  background: rgba(0, 0, 0, 0.4);
+  /* backdrop-filter: blur(1px); */
+}
+
+.hero .eyebrow {
+  color: var(--color-stone);
 }
 
 .hero h1 {
   margin-bottom: 1.5rem;
   font-size: clamp(2.4rem, 4vw, 4.5rem);
+  color: var(--color-light);
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   line-height: 1.05;
@@ -127,14 +124,7 @@ a {
   margin-bottom: 2.5rem;
   font-size: 1.05rem;
   line-height: 1.75;
-  color: var(--color-muted);
-}
-
-/* Reset hero p styles for the card */
-.hero p {
-  max-width: 100%;
-  color: var(--color-muted);
-  text-shadow: none;
+  color: var(--color-cream);
 }
 
 /* BUTTON */
@@ -147,28 +137,19 @@ a {
 
 .button {
   padding: 1.1rem 2.25rem;
-  border: 1.5px solid var(--color-text);
+  color: var(--color-light);
+  border: 1px solid var(--color-light);
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(1px);
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.12rem;
   text-transform: uppercase;
 }
 
-@media (max-width: 460px) {
-  .btn-wrapper {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .button {
-    padding: 0.8rem 1.6rem;
-    text-align: center;
-  }
-}
-
 .button:hover {
-  color: var(--color-light);
-  background-color: var(--color-text);
+  background-color: var(--color-stone);
+  color: var(--color-text);
 }
 
 /* FOOTER */
@@ -503,86 +484,6 @@ a {
 
 /* RESPONSIVE */
 
-@media (max-width: 768px) {
-  .hero-content {
-    min-height: 85vh;
-    /* padding: 2rem 5%; */
-    background-image: url("./images/house.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  .hero-content img {
-    display: none;
-  }
-
-  .hero-content-details {
-    /* margin: 0; */
-    /* width: 100%; */
-    /* max-width: 620px; */
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: none;
-    box-shadow: none;
-    width: 90%;
-    max-width: 100%;
-    padding: 1rem 1.5rem;
-  }
-
-  .hero h1 {
-    font-size: clamp(3rem, 8vw, 5.8rem);
-    color: var(--color-light);
-  }
-
-  .hero p {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.88);
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
-  }
-
-  .hero .subtext {
-    font-size: 1rem;
-    color: var(--color-cream);
-  }
-
-  .button {
-    border: 1px solid var(--color-light);
-    background-color: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(1px);
-    color: var(--color-light);
-  }
-
-  .button:hover {
-    background-color: var(--color-stone);
-    color: var(--color-text);
-  }
-}
-
-@media (max-width: 475px) {
-  .hero h1 {
-    font-size: 2rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .hero .eyebrow {
-    font-size: 0.7rem;
-  }
-
-  .hero .subtext {
-    margin-bottom: 1rem;
-  }
-
-  .btn-wrapper {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.7rem;
-  }
-
-  .button {
-    padding: 0.8rem 1.6rem;
-  }
-}
-
 @media (max-width: 900px) {
   .values-grid,
   .projects-grid {
@@ -598,6 +499,14 @@ a {
     max-height: 420px;
     width: 100%;
     object-fit: cover;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content-details {
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem 1.5rem;
   }
 }
 
@@ -617,5 +526,25 @@ a {
     font-size: 2.25rem;
     top: 1rem;
     right: 1.25rem;
+  }
+}
+
+@media (max-width: 475px) {
+  .hero h1 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .hero .subtext {
+    margin-bottom: 1.5rem;
+  }
+  .btn-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.7rem;
+  }
+
+  .button {
+    padding: 0.8rem 1.6rem;
   }
 }
