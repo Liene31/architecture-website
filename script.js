@@ -1,9 +1,30 @@
+//hamburger menu variables
+const hamburger = document.getElementById("hamburger-menu");
+const desktopQuery = window.matchMedia("(min-width: 769px)");
+
+//gallery variables
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 const counter = document.getElementById("lightbox-counter");
 
 let imageGallery = [];
 let index = 0;
+
+//hamburger menu functionality
+
+//adds nav-open class to body and use that class in css for open nav functionality
+hamburger.addEventListener("click", () => {
+  document.body.classList.toggle("nav-open");
+});
+
+//auto-close the menu when resizing up to desktop
+desktopQuery.addEventListener("change", (e) => {
+  if (e.matches) {
+    document.body.classList.remove("nav-open");
+  }
+});
+
+//gallery functionality
 
 function showImage(i) {
   // turns images around

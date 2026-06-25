@@ -10,6 +10,11 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <!-- Material Icon CDN -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <!-- CSS Global -->
     <link rel="stylesheet" href="./global.css" />
     <title>About - Architecture</title>
@@ -20,14 +25,20 @@
         <span class="logo-name">Javier Lázaro</span>
         <span class="logo-suffix">Architects</span></a
       >
+
       <nav class="site-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="about.html" class="active">About</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
       </nav>
+      <button class="hamburger-menu" id="hamburger-menu">
+        <!-- material icons -->
+        <i class="menuIcon material-icons">menu</i>
+        <i class="closeIcon material-icons">close</i>
+      </button>
     </header>
 
     <main>
@@ -166,5 +177,6 @@
         </li>
       </ul>
     </footer>
+    <script src="./script.js"></script>
   </body>
 </html>
