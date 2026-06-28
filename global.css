@@ -517,6 +517,34 @@ body.nav-open .closeIcon {
   display: none;
 }
 
+/* CONTACT */
+
+.contact-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  max-width: 800px;
+  padding: 1rem 5% 7rem;
+}
+
+.contact-block {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+}
+
+.contact-block address {
+  /* removes default italic on <address> */
+  font-style: normal;
+}
+
+.contact-value a:hover {
+  color: var(--color-muted);
+  text-decoration: underline;
+}
+
 /* RESPONSIVE */
 
 @media (max-width: 900px) {
@@ -609,6 +637,16 @@ body.nav-open .closeIcon {
     font-size: 2.25rem;
     top: 1rem;
     right: 1.25rem;
+  }
+
+  .contact-details {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .contact-block address,
+  .contact-value {
+    font-size: 1.2rem;
   }
 }
 
