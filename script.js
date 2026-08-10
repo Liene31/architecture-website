@@ -7,6 +7,9 @@ const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 const counter = document.getElementById("lightbox-counter");
 
+//language switcher variables
+const langSwitch = document.getElementById("lang-switch");
+
 let imageGallery = [];
 let index = 0;
 
@@ -23,6 +26,42 @@ desktopQuery.addEventListener("change", (e) => {
     document.body.classList.remove("nav-open");
   }
 });
+
+
+
+//language switcher functionality
+if (langSwitch) {
+  const langToggle = langSwitch.querySelector(".lang-toggle");
+
+  function closeLangMenu() {
+    langSwitch.classList.remove("open");
+    langToggle.setAttribute("aria-expanded", "false");
+  }
+
+  function openLangMenu() {
+    langSwitch.classList.add("open");
+    langToggle.setAttribute("aria-expanded", "true");
+  }
+
+  langToggle.addEventListener("click", () => {
+    langSwitch.classList.contains("open") ? closeLangMenu() : openLangMenu();
+  });
+
+  //close when clicking anywhere outside the switcher
+  document.addEventListener("click", (e) => {
+    if (!langSwitch.contains(e.target)) {
+      closeLangMenu();
+    }
+  });
+
+  //close on Escape and hand focus back to the toggle button
+  langSwitch.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeLangMenu();
+      langToggle.focus();
+    }
+  });
+}
 
 //gallery functionality
 
