@@ -55,7 +55,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 5%;
+  padding: 1.5rem 2%;
   background-color: var(--color-light);
   position: sticky;
   top: 0;
@@ -75,6 +75,12 @@ a {
   font-weight: 300;
   margin-left: 0.35rem;
   color: var(--color-muted);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
 }
 
 .site-nav ul {
@@ -99,6 +105,83 @@ a {
   color: var(--color-text);
   text-decoration: underline;
   text-underline-offset: 0.4rem;
+}
+
+/* LANGUAGE SWITCHER */
+
+.lang-switch {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lang-switch::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -1.25rem;
+  width: 1px;
+  height: 1rem;
+  transform: translateY(-50%);
+  background-color: var(--color-stone);
+}
+
+.lang-switch .lang-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem;
+  color: var(--color-muted);
+  background-color: transparent;
+  border: none;
+  cursor: pointer; 
+}
+
+.lang-switch .lang-toggle .material-icons {
+  font-size: 1.35rem;
+}
+
+.lang-switch .lang-toggle:hover,
+.lang-switch.open .lang-toggle {
+  color: var(--color-text);
+}
+
+.lang-switch .lang-menu {
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem 1rem;
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;  
+  background-color: var(--color-light);
+  border: 1px solid var(--color-stone);
+}
+
+.lang-switch.open .lang-menu {
+  display: flex;
+}
+
+.lang-switch .lang-menu a,
+.lang-switch .lang-menu span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
+}
+
+.lang-switch .lang-menu a:hover,
+.lang-switch .lang-menu a[aria-current="true"] {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
+.lang-switch .lang-menu .lang-unavailable {
+  opacity: 0.45;
 }
 
 /* HAMBURGER-MENU */
@@ -177,7 +260,7 @@ body.nav-open .closeIcon {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 5%;
+  padding: 1.5rem 2%;
   background-color: var(--color-light);
   color: var(--color-muted);
   font-size: 0.85rem;
@@ -589,8 +672,10 @@ body.nav-open .closeIcon {
   .site-nav {
     position: fixed;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 3rem;
     transform: translateY(-100%);
     transition: transform 0.2s;
     top: 0;
@@ -610,6 +695,38 @@ body.nav-open .closeIcon {
   .site-nav a {
     font-size: 1.4rem;
     letter-spacing: 0.1em;
+  }
+
+  .lang-switch {
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-stone);
+  }
+
+  .lang-switch::before {
+    display: none;
+  }
+
+  .lang-switch .lang-toggle .material-icons {
+    font-size: 1.6rem;
+  }
+
+  .lang-switch .lang-menu {
+    position: static;
+    left: auto;
+    transform: none;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.25rem;
+    min-width: 0;
+    margin-top: 1.5rem;
+    padding: 0;
+    background: none;
+    border: none;
+  }
+
+  .lang-switch .lang-menu a,
+  .lang-switch .lang-menu span {
+    font-size: 1rem;
   }
 
   .hero-content {

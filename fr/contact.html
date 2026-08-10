@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,11 +16,11 @@
       rel="stylesheet"
     />
     <!-- CSS Global -->
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="alternate" hreflang="en" href="index.html" />
-    <link rel="alternate" hreflang="fr" href="fr/index.html" />
-    <link rel="alternate" hreflang="nl" href="nl/index.html" />
-    <link rel="alternate" hreflang="x-default" href="index.html" />
+    <link rel="stylesheet" href="../global.css" />
+    <link rel="alternate" hreflang="en" href="../contact.html" />
+    <link rel="alternate" hreflang="fr" href="contact.html" />
+    <link rel="alternate" hreflang="nl" href="../nl/contact.html" />
+    <link rel="alternate" hreflang="x-default" href="../contact.html" />
     <title>Architecture</title>
   </head>
   <body>
@@ -32,10 +32,10 @@
 
       <nav class="site-nav">
         <ul>
-          <li><a href="index.html" class="active">home</a></li>
-          <li><a href="about.html">about</a></li>
-          <li><a href="projects.html">projects</a></li>
-          <li><a href="contact.html">contact</a></li>
+          <li><a href="index.html">accueil</a></li>
+          <li><a href="about.html">à propos</a></li>
+          <li><a href="projects.html">projets</a></li>
+          <li><a href="contact.html" class="active">contact</a></li>
         </ul>
         <div class="lang-switch" id="lang-switch">
           <button
@@ -49,17 +49,17 @@
           </button>
           <ul class="lang-menu" id="lang-menu">
             <li>
-              <a href="index.html" lang="en" hreflang="en" aria-current="true"
+              <a href="../contact.html" lang="en" hreflang="en"
                 >EN</a
               >
             </li>
             <li>
-              <a href="fr/index.html" lang="fr" hreflang="fr"
+              <a href="contact.html" lang="fr" hreflang="fr" aria-current="true"
                 >FR</a
               >
             </li>
             <li>
-              <a href="nl/index.html" lang="nl" hreflang="nl"
+              <a href="../nl/contact.html" lang="nl" hreflang="nl"
                 >NL</a
               >
             </li>
@@ -74,16 +74,32 @@
     </header>
 
     <main>
-      <section class="hero">
-        <div class="hero-content">
-          <div class="btn-wrapper">
-            <a href="projects.html" class="button">Projects</a>
-            <a href="contact.html" class="button">Contact</a>
+      <section class="contact-details">
+        <address class="contact-card">
+          <p class="eyebrow">Studio</p>
+
+          <div class="contact-group">
+            <div class="contact-name">
+              <span class="logo-name">Javier Lázaro</span
+              ><span class="logo-suffix">Architects </span>
+            </div>
+            <p>Avenue AJ Slegers 78</p>
+            <p>1200 Woluwe-St-Lambert</p>
           </div>
-        </div>
+
+          <span class="contact-divider"></span>
+
+          <div class="contact-group">
+            <p><a href="tel:+32484420201">+32 484 42 02 01</a></p>
+            <p>
+              <a href="mailto:javierlazaro.89@gmail.com"
+                >javierlazaro.89@gmail.com</a
+              >
+            </p>
+          </div>
+        </address>
       </section>
     </main>
-
     <footer class="site-footer">
       <div>
         © <span class="logo-name">Javier Lázaro</span
@@ -97,7 +113,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="./images/youtube.svg" alt="YouTube" />
+            <img src="../images/youtube.svg" alt="YouTube" />
           </a>
         </li>
         <li>
@@ -106,16 +122,16 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="./images/instagram-fill.svg" alt="Instagram" />
+            <img src="../images/instagram-fill.svg" alt="Instagram" />
           </a>
         </li>
         <li>
           <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
-            <img src="./images/x-twitter-solid.svg" alt="X / Twitter" />
+            <img src="../images/x-twitter-solid.svg" alt="X / Twitter" />
           </a>
         </li>
       </ul>
     </footer>
-    <script src="./script.js"></script>
+    <script src="../script.js"></script>
   </body>
 </html>

@@ -17,6 +17,10 @@
     />
     <!-- CSS Global -->
     <link rel="stylesheet" href="./global.css" />
+    <link rel="alternate" hreflang="en" href="contact.html" />
+    <link rel="alternate" hreflang="fr" href="fr/contact.html" />
+    <link rel="alternate" hreflang="nl" href="nl/contact.html" />
+    <link rel="alternate" hreflang="x-default" href="contact.html" />
     <title>Architecture</title>
   </head>
   <body>
@@ -33,6 +37,34 @@
           <li><a href="projects.html">projects</a></li>
           <li><a href="contact.html" class="active">contact</a></li>
         </ul>
+        <div class="lang-switch" id="lang-switch">
+          <button
+            type="button"
+            class="lang-toggle"
+            id="lang-toggle"
+            aria-expanded="false"
+            aria-controls="lang-menu"
+          >
+            <i class="material-icons">language</i>
+          </button>
+          <ul class="lang-menu" id="lang-menu">
+            <li>
+              <a href="contact.html" lang="en" hreflang="en" aria-current="true"
+                >EN</a
+              >
+            </li>
+            <li>
+              <a href="fr/contact.html" lang="fr" hreflang="fr"
+                >FR</a
+              >
+            </li>
+            <li>
+              <a href="nl/contact.html" lang="nl" hreflang="nl"
+                >NL</a
+              >
+            </li>
+          </ul>
+        </div>
       </nav>
       <button class="hamburger-menu" id="hamburger-menu">
         <!-- material icons -->
